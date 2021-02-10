@@ -1,0 +1,14 @@
+base_url = "https://arnaudgolfouse.github.io/"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+[markdown]
+highlight_code = true
+# cool themes:
+# - dark: 1337, charcoal, dracula, gruvbox-dark, material-dark, kronuz, monokai, one-dark
+# - light: idle, inspired-github, ir-white, subway-madrid
+highlight_theme = "kronuz"

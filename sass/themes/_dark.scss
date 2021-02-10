@@ -1,0 +1,42 @@
+// General
+$text-color: white;
+$text-strong-color: #ffc4a2;
+$background-color: #232323;
+
+// Header
+$header-shadow-color: #7a4410;
+$h2-line-color: #aaa;
+
+// Image
+$image-border-color: #425b6e;
+
+// Links
+$link-color: #a0a8ff;
+$link-visited-color: #b080ff;
+
+// Quote
+$quote-text-color: #aaa;
+$quote-border-color: #444;
+
+// Code
+$inline-code-color: #ffbbbb;
+$inline-code-background-color: #333;
+$code-block-color: white;
+$code-block-border-color: #555; // 682225
+$code-block-border-size: 1px;
+$code-block-language-name-color: #ffecda;
+$code-block-language-name-background-color: #2b1f13;
+// Code highlighting (Done directly via zola now...)
+/*$token-comment-color: #aaa;
+$token-number-color: #ff8d23;
+$token-symbol-color: cyan;
+$token-operator-color: #ddaff3;
+$token-string-color: #2fce44;
+$token-keyword-color: #c587ff;
+$token-constant-color: #ff753f;
+$token-function-color: #6cb8ff;
+$token-type-color: #8e96ff;
+$token-class-color: #c6ffed;
+$token-important-color: #bb4949;
+$token-deleted-color: red;
+*/

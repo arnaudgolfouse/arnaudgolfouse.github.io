@@ -1,0 +1,67 @@
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: $token-comment-color;
+}
+
+.token.number {
+  color: $token-number-color;
+}
+
+.token.symbol {
+  color: $token-symbol-color;
+}
+
+.token.operator {
+  color: $token-operator-color;
+}
+
+.token.string {
+  color: $token-string-color;
+}
+
+.token.keyword {
+  color: $token-keyword-color;
+}
+
+.token.boolean,
+.token.constant {
+  color: $token-constant-color;
+}
+
+.token.function,
+.token.property {
+  color: $token-function-color;
+}
+
+.token.type {
+  color: $token-type-color;
+}
+
+.token.class,
+.token.namespace,
+.token.variable {
+  color: $token-class-color;
+}
+
+.token.bold,
+.token.important {
+  font-weight: bold;
+}
+
+.token.important {
+  color: $token-important-color;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.deleted {
+  color: $token-deleted-color;
+}
