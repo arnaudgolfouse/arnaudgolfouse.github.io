@@ -10,58 +10,58 @@ How to get TeX up and running with UTF-8 on various systems, using XeLateX and V
 
 </center>
 
-# What is this ?
+## What is this ?
 
 This is a tutorial to get a TeX distribution running on Linux/Windows, with UTF-8 support, using the Visual Studio Code editor.
 
 (This is also a personal reminder in case I need to do it all again 🙂)
 
-## Why UTF-8 ?
+### Why UTF-8 ?
 
 I find it way easier to write/read TeX documents this way: for me,
 
-```latex
+```tex
 Hellö W⊕rld
 $$ f: Xₙ → ℒ ∪ ℂ ∪ ∅ $$
 ```
 
 Is way more readable than:
 
-```latex
+```tex
 Hell\"{o} W$\oplus$rld
 $$ f: X_n \to \mathcal{L} \cup \mathbb{C} \cup \emptyset $$
 ```
 
 Also don't worry too much about portability: this setup works on Windows, Linux, and even ([imperfectly](#drawbacks)) Overleaf (with the compiler set to `XeLateX`).
 
-## Why VSCode ?
+### Why VSCode ?
 
 - It has decent latex support: autocompletion, syntax highlighting, view PDF...
 - This is a _modern_ editor: this means it looks pretty good, has a lot of configuration options, is extensible...
 - It can also be used to code in various programming languages if you need to (in fact, this is its main purpose)
 - You can use extensions to easily insert UTF-8 characters.
 
-## Drawbacks
+### Drawbacks
 
 - This was not tested on Mac, or linux/BDS distributions other than Debian.
 - VSCode is open source, but it _is_ being developped by Microsoft: you may have an issue with that.
 - It consumes a slightly high amount of memory
 - Overleaf does _not_ support every UTF-8 character, only those in the [basic multilingual plane](<https://en.wikipedia.org/wiki/Plane_(Unicode)#Basic_Multilingual_Plane>). This is usually fine, but some characters like `𝒢` fall outside of this range.
 
-# Dependencies
+## Dependencies
 
 **Be sure to install the dependencies for your system before continuing !**
 
 - [Windows](dependencies-windows "Windows dependencies")
 - [Linux](dependencies-linux "Linux dependencies")
 
-# Visual Studio Code setup
+## Visual Studio Code setup
 
 Now that we have all we need, launch VSCode.
 
 We will need a few things to get the TeX support we want:
 
-## Extensions
+### Extensions
 
 VSCode can be extended with third-party addons called extensions.
 
@@ -75,7 +75,7 @@ There, you can search and install extensions. Install the following extensions:
 - latex-input
 - Unicode Latex
 
-## Settings
+### Settings
 
 Now since we use `xelatex` instead of the more classic `latex`, we need to change some settings. Open the settings on the bottom-left:
 
@@ -119,13 +119,13 @@ And replace the content of the file with
 
 The LateX Workshop extension has various interesting settings, don't hesitate to play with these
 
-# Write some TeX !
+## Write some TeX !
 
 Now we can start writing TeX !
 
 Open a new directory in VSCode, and create a new `main.tex` file in it. Fill it with
 
-```latex
+```tex
 \documentclass[a4paper]{article}
 
 \usepackage{fontspec}
@@ -152,7 +152,7 @@ You can then:
 
 The resulting PDF (and intermediary files) can be found in the `build` directory next to `main.tex`.
 
-## Easily write UTF-8
+### Easily write UTF-8
 
 Note the 2 extensions we installed after Latex Workshop: **latex-input** and **Unicode Latex**. These will help us write any character we want:
 
