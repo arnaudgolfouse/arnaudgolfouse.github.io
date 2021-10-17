@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TeX Setup</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/main.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="content">
+<h1>TeX Setup</h1>
+<h2>Table of contents</h2>
+<ul class="table-of-contents">
+  
+  <li>
+    <a href="https://arnaudgolfouse.github.io/tex-setup/#what-is-this">What is this ?</a>
+    
+    <ul>
+      
+      <li>
+        <a href="https://arnaudgolfouse.github.io/tex-setup/#why-utf-8">Why UTF-8 ?</a>
+      </li>
+      
+      <li>
+        <a href="https://arnaudgolfouse.github.io/tex-setup/#why-vscode">Why VSCode ?</a>
+      </li>
+      
+      <li>
+        <a href="https://arnaudgolfouse.github.io/tex-setup/#drawbacks">Drawbacks</a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="https://arnaudgolfouse.github.io/tex-setup/#dependencies">Dependencies</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://arnaudgolfouse.github.io/tex-setup/#visual-studio-code-setup">Visual Studio Code setup</a>
+    
+    <ul>
+      
+      <li>
+        <a href="https://arnaudgolfouse.github.io/tex-setup/#extensions">Extensions</a>
+      </li>
+      
+      <li>
+        <a href="https://arnaudgolfouse.github.io/tex-setup/#settings">Settings</a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="https://arnaudgolfouse.github.io/tex-setup/#write-some-tex">Write some TeX !</a>
+    
+    <ul>
+      
+      <li>
+        <a href="https://arnaudgolfouse.github.io/tex-setup/#easily-write-utf-8">Easily write UTF-8</a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+</ul>
+<p>How to get TeX up and running with UTF-8 on various systems, using XeLateX and VSCode.</p>
+<center>
+<p><img src="https://arnaudgolfouse.github.io/tex-setup/example_gif.gif" alt="example gif" /></p>
+</center>
+<h2 id="what-is-this">What is this ?</h2>
+<p>This is a tutorial to get a TeX distribution running on Linux/Windows, with UTF-8 support, using the Visual Studio Code editor.</p>
+<p>(This is also a personal reminder in case I need to do it all again 🙂)</p>
+<h3 id="why-utf-8">Why UTF-8 ?</h3>
+<p>I find it way easier to write/read TeX documents this way: for me,</p>
+<pre style="background-color:#383838;">
+<code class="language-tex" data-lang="tex"><span style="color:#e6e1dc;">Hellö W⊕rld
+</span><span style="color:#a5c261;">$$ </span><span style="color:#d0d0ff;">f</span><span style="color:#e6e1dc;">: </span><span style="color:#d0d0ff;">X</span><span style="color:#e6e1dc;">ₙ → ℒ ∪ ℂ ∪ ∅ </span><span style="color:#a5c261;">$$
+</span></code></pre>
+<p>Is way more readable than:</p>
+<pre style="background-color:#383838;">
+<code class="language-tex" data-lang="tex"><span style="color:#e6e1dc;">Hell</span><span style="color:#519f50;">\&quot;</span><span style="color:#e6e1dc;">{o} W</span><span style="color:#a5c261;">$</span><span style="color:#da4939;">\oplus</span><span style="color:#a5c261;">$</span><span style="color:#e6e1dc;">rld
+</span><span style="color:#a5c261;">$$ </span><span style="color:#d0d0ff;">f</span><span style="color:#e6e1dc;">: </span><span style="color:#d0d0ff;">X</span><span style="color:#cc7833;">_</span><span style="color:#d0d0ff;">n </span><span style="color:#da4939;">\to \mathcal</span><span style="color:#e6e1dc;">{</span><span style="color:#d0d0ff;">L</span><span style="color:#e6e1dc;">} </span><span style="color:#da4939;">\cup \mathbb</span><span style="color:#e6e1dc;">{</span><span style="color:#d0d0ff;">C</span><span style="color:#e6e1dc;">} </span><span style="color:#da4939;">\cup \emptyset </span><span style="color:#a5c261;">$$
+</span></code></pre>
+<p>Also don't worry too much about portability: this setup works on Windows, Linux, and even (<a href="https://arnaudgolfouse.github.io/tex-setup/#drawbacks">imperfectly</a>) Overleaf (with the compiler set to <code>XeLateX</code>).</p>
+<h3 id="why-vscode">Why VSCode ?</h3>
+<ul>
+<li>It has decent latex support: autocompletion, syntax highlighting, view PDF...</li>
+<li>This is a <em>modern</em> editor: this means it looks pretty good, has a lot of configuration options, is extensible...</li>
+<li>It can also be used to code in various programming languages if you need to (in fact, this is its main purpose)</li>
+<li>You can use extensions to easily insert UTF-8 characters.</li>
+</ul>
+<h3 id="drawbacks">Drawbacks</h3>
+<ul>
+<li>This was not tested on Mac, or linux/BDS distributions other than Debian.</li>
+<li>VSCode is open source, but it <em>is</em> being developped by Microsoft: you may have an issue with that.</li>
+<li>It consumes a slightly high amount of memory</li>
+<li>Overleaf does <em>not</em> support every UTF-8 character, only those in the <a href="https://en.wikipedia.org/wiki/Plane_(Unicode)#Basic_Multilingual_Plane">basic multilingual plane</a>. This is usually fine, but some characters like <code>𝒢</code> fall outside of this range.</li>
+</ul>
+<h2 id="dependencies">Dependencies</h2>
+<p><strong>Be sure to install the dependencies for your system before continuing !</strong></p>
+<ul>
+<li><a href="https://arnaudgolfouse.github.io/tex-setup/dependencies-windows" title="Windows dependencies">Windows</a></li>
+<li><a href="https://arnaudgolfouse.github.io/tex-setup/dependencies-linux" title="Linux dependencies">Linux</a></li>
+</ul>
+<h2 id="visual-studio-code-setup">Visual Studio Code setup</h2>
+<p>Now that we have all we need, launch VSCode.</p>
+<p>We will need a few things to get the TeX support we want:</p>
+<h3 id="extensions">Extensions</h3>
+<p>VSCode can be extended with third-party addons called extensions.</p>
+<p>To install extensions, go to the extensions panel:</p>
+<p><img src="https://arnaudgolfouse.github.io/tex-setup/vscode-extensions-location.png" alt="" /></p>
+<p>There, you can search and install extensions. Install the following extensions:</p>
+<ul>
+<li>LaTeX Workshop</li>
+<li>latex-input</li>
+<li>Unicode Latex</li>
+</ul>
+<h3 id="settings">Settings</h3>
+<p>Now since we use <code>xelatex</code> instead of the more classic <code>latex</code>, we need to change some settings. Open the settings on the bottom-left:</p>
+<p><img src="https://arnaudgolfouse.github.io/tex-setup/vscode-settings-location.png" alt="" />
+<img src="https://arnaudgolfouse.github.io/tex-setup/vscode-settings-location-2.png" alt="" /></p>
+<p>You can modify the settings from here, but it will be easier to change the settings file directly. Click on the &quot;Open Settings (JSON)&quot; button on the top-right:</p>
+<p><img src="https://arnaudgolfouse.github.io/tex-setup/vscode-settings-location-3.png" alt="" /></p>
+<p>And replace the content of the file with</p>
+<pre style="background-color:#383838;">
+<code class="language-json" data-lang="json"><span style="color:#e6e1dc;">{
+  </span><span style="color:#95815e;">// Use XeLateX instead of LateX
+  </span><span style="color:#c1be91;">&quot;latex-workshop.latex.tools&quot;</span><span style="color:#e6e1dc;">: [
+    {
+      </span><span style="color:#c1be91;">&quot;name&quot;</span><span style="color:#e6e1dc;">: </span><span style="color:#c1be91;">&quot;latexmk&quot;</span><span style="color:#e6e1dc;">,
+      </span><span style="color:#c1be91;">&quot;command&quot;</span><span style="color:#e6e1dc;">: </span><span style="color:#c1be91;">&quot;latexmk&quot;</span><span style="color:#e6e1dc;">,
+      </span><span style="color:#c1be91;">&quot;args&quot;</span><span style="color:#e6e1dc;">: [
+        </span><span style="color:#c1be91;">&quot;-xelatex&quot;</span><span style="color:#e6e1dc;">,
+        </span><span style="color:#c1be91;">&quot;-output-directory=build&quot;</span><span style="color:#e6e1dc;">,
+        </span><span style="color:#c1be91;">&quot;-synctex=1&quot;</span><span style="color:#e6e1dc;">,
+        </span><span style="color:#c1be91;">&quot;-interaction=nonstopmode&quot;</span><span style="color:#e6e1dc;">,
+        </span><span style="color:#c1be91;">&quot;-file-line-error&quot;</span><span style="color:#e6e1dc;">,
+        </span><span style="color:#c1be91;">&quot;%DOC%&quot;
+      </span><span style="color:#e6e1dc;">]
+    }
+  ],
+  </span><span style="color:#95815e;">// Put the build artifacts in a &#39;build&#39; directory next to the &#39;.tex&#39; file
+  </span><span style="color:#c1be91;">&quot;latex-workshop.latex.outDir&quot;</span><span style="color:#e6e1dc;">: </span><span style="color:#c1be91;">&quot;%DIR%/build&quot;</span><span style="color:#e6e1dc;">,
+  </span><span style="color:#95815e;">// View the resulting PDF in dark mode.
+  </span><span style="color:#c1be91;">&quot;latex-workshop.view.pdf.invertMode.enabled&quot;</span><span style="color:#e6e1dc;">: </span><span style="color:#c1be91;">&quot;always&quot;</span><span style="color:#e6e1dc;">,
+  </span><span style="color:#c1be91;">&quot;latex-workshop.view.pdf.invert&quot;</span><span style="color:#e6e1dc;">: </span><span style="color:#a5c261;">0.9</span><span style="color:#e6e1dc;">,
+  </span><span style="color:#95815e;">// View the PDF directly in VSCode
+  </span><span style="color:#c1be91;">&quot;latex-workshop.view.pdf.viewer&quot;</span><span style="color:#e6e1dc;">: </span><span style="color:#c1be91;">&quot;tab&quot;
+</span><span style="color:#e6e1dc;">}
+</span></code></pre>
+<p>(Remove the lines you don't want)</p>
+<p>The LateX Workshop extension has various interesting settings, don't hesitate to play with these</p>
+<h2 id="write-some-tex">Write some TeX !</h2>
+<p>Now we can start writing TeX !</p>
+<p>Open a new directory in VSCode, and create a new <code>main.tex</code> file in it. Fill it with</p>
+<pre style="background-color:#383838;">
+<code class="language-tex" data-lang="tex"><span style="color:#cc7833;">\documentclass</span><span style="color:#e6e1dc;">[a4paper]{</span><span style="font-style:italic;color:#6e9cbe;">article</span><span style="color:#e6e1dc;">}
+
+</span><span style="color:#cc7833;">\usepackage</span><span style="color:#e6e1dc;">{</span><span style="font-style:italic;color:#6e9cbe;">fontspec</span><span style="color:#e6e1dc;">}
+</span><span style="color:#cc7833;">\usepackage</span><span style="color:#e6e1dc;">{</span><span style="font-style:italic;color:#6e9cbe;">unicode-math</span><span style="color:#e6e1dc;">}
+</span><span style="color:#da4939;">\setmainfont</span><span style="color:#e6e1dc;">[Ligatures=TeX]{FreeSerif}
+
+</span><span style="color:#cc7833;">\begin</span><span style="color:#e6e1dc;">{</span><span style="font-style:italic;color:#fd971f;">document</span><span style="color:#e6e1dc;">}
+
+Hellö W⊕rld
+</span><span style="color:#a5c261;">$$ </span><span style="color:#d0d0ff;">f</span><span style="color:#e6e1dc;">: </span><span style="color:#d0d0ff;">X</span><span style="color:#e6e1dc;">ₙ → ℒ ∪ ℂ ∪ ∅ </span><span style="color:#a5c261;">$$
+
+</span><span style="color:#cc7833;">\end</span><span style="color:#e6e1dc;">{</span><span style="font-style:italic;color:#fd971f;">document</span><span style="color:#e6e1dc;">}
+</span></code></pre>
+<p>You can then:</p>
+<ul>
+<li>
+<p>Build the document:</p>
+<p><img src="https://arnaudgolfouse.github.io/tex-setup/build.png" alt="" /></p>
+</li>
+<li>
+<p>View the resulting PDF:</p>
+<p><img src="https://arnaudgolfouse.github.io/tex-setup/view.png" alt="" /></p>
+</li>
+</ul>
+<p>The resulting PDF (and intermediary files) can be found in the <code>build</code> directory next to <code>main.tex</code>.</p>
+<h3 id="easily-write-utf-8">Easily write UTF-8</h3>
+<p>Note the 2 extensions we installed after Latex Workshop: <strong>latex-input</strong> and <strong>Unicode Latex</strong>. These will help us write any character we want:</p>
+<ul>
+<li>
+<p><strong>Unicode Latex</strong> allow you to insert almost any UTF-8 character you want. In VSCode, open the command prompt with <code>Ctrl+Shift+P</code>, and type <code>Unicode: Insert Math Symbol</code>. You then have access to the list of characters, with a search function based on the name of their TeX command.</p>
+<p><img src="https://arnaudgolfouse.github.io/tex-setup/unicode-latex.gif" alt="Unicode Latex GIF" /></p>
+</li>
+<li>
+<p>This is a bit annoying to use though: and that is why we have <strong>latex-input</strong> ! This allow us to gain autocompletion for various UTF-8 characters: just type <code>\</code> and the name of the command you want:</p>
+<p><img src="https://arnaudgolfouse.github.io/tex-setup/latex-input.gif" alt="Unicode Latex GIF" /></p>
+<p>latex-input is customizable via a json file (the version number may change):</p>
+<ul>
+<li><code>.vscode/extensions/yellpika.latex-input-1.0.0/default-mappings.json</code> on Linux.</li>
+<li><code>C:\Users\&lt;USERNAME&gt;\.vscode\extensions\yellpika.latex-input-1.0.0\default-mappings.json</code> on Windows.</li>
+</ul>
+<p>If you want, the <a href="./latex-input-mappings.json">latex-input-mappings.json</a> file provides a reasonable extension to the default: just use its content to overwrite <code>default-mappings.json</code>.</p>
+</li>
+</ul>
+ </div>
+  </body>
+  <div class="navbar-bottom">
+    <a href="/">Home</a>
+    <a href="https://github.com/arnaudgolfouse/arnaudgolfouse.github.io"
+      >Source</a
+    >
+  </div>
+</html>

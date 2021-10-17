@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TeX Setup</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/main.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="content"> <p>This describes the dependencies needed on a Debian-based system. (This was tested on Ubuntu 18.04, Ubuntu 20.04 and Debian 10)</p>
+<h4 id="notes">Notes</h4>
+<p>When we say 'run a command', it means:</p>
+<ul>
+<li>Open a terminal with <code>Ctrl+Alt+T</code> (or via your menu)</li>
+<li>Type the command</li>
+<li>Press <code>Enter</code></li>
+<li>Enter a password when prompted to install software</li>
+</ul>
+<h3 id="1-xelatex">1. XeLateX</h3>
+<blockquote>
+<p>The alternative to LaTeX we will be using, because of its support for UTF-8.</p>
+</blockquote>
+<p>Run the command <code>sudo apt install texlive-xetex</code>.</p>
+<p>To get all TeX packages, you should run <code>sudo apt install texlive-full</code> instead (warning: this might take some time)</p>
+<h3 id="2-freeserif-font">2. FreeSerif font</h3>
+<blockquote>
+<p>A font with good support for UTF-8</p>
+</blockquote>
+<ul>
+<li>Install the font manager: <code>sudo apt install font-manager</code></li>
+<li>Download the FreeSerif font <a href="https://www.fontspace.com/freeserif-font-f13277">here</a></li>
+<li>Add the font using the font manager</li>
+</ul>
+<h3 id="3-latexmk">3. Latexmk</h3>
+<blockquote>
+<p>Used to drive the TeX compilation.</p>
+</blockquote>
+<p>Run the command <code>sudo apt install latexmk</code></p>
+<h3 id="4-visual-studio-code">4. Visual Studio Code</h3>
+<p>You can download and install VSCode <a href="https://code.visualstudio.com/Download">here</a>.</p>
+ </div>
+  </body>
+  <div class="navbar-bottom">
+    <a href="/">Home</a>
+    <a href="https://github.com/arnaudgolfouse/arnaudgolfouse.github.io"
+      >Source</a
+    >
+  </div>
+</html>
